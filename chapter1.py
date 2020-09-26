@@ -1,8 +1,8 @@
 from random import randint
 
+# Exercise 1.2
 rand_number = randint(1, 10)
 
-# Exercise 1.2
 while True:
 	"""
 	Create a number guessing program that generates a pseudorandom number,
@@ -44,4 +44,20 @@ print(custom_sum(1, 2, 3, 4, 5))  # Has to print out 15
 print(custom_sum(2, 9, 10, 11))  # Has to print out 32
 print(custom_sum(21, 8, 16, 1))  # Has to print out 46
 
+# Exercise 1.4
+'''
+Write a program that asks how long it took to run 10 km today. 
+The program continues to ask how long (in minutes) it took for additional runs, until the user enters q.
+At that point, the program exits — but only after calculating and displaying the average time that the 10 km run took.
+'''
+runs = 0
+time = 0
+while True:
+	run = input('Enter 10km run time, or \'q\' to exit: ')
+	if run == 'q':
+		break
+	else:
+		runs = runs + 1
+		time = time + float(run)
 
+print(f'Average of {time / runs}, over {runs} runs')
