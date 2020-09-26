@@ -61,3 +61,16 @@ while True:
 		time = time + float(run)
 
 print(f'Average of {time / runs}, over {runs} runs')
+
+# Exercise 1.5
+'''
+Write a program that takes a hex number and returns the decimal equivalent. 
+That is, if the user enters 50, then we will assume that it is a hex 
+number (equal to 0x50), and will print the value 80 on the screen.
+I will have to use 'enumerate' and 'reversed' built-in functions
+'''
+decimal = 0
+b_16 = input('Enter a hex number to convert to decimal equivalent: ')
+for power, digit in enumerate(reversed(b_16)):
+	decimal = decimal + (int(digit, 16)) * (16 ** power)
+print(decimal)
