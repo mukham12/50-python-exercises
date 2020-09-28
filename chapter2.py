@@ -11,3 +11,17 @@ if word[0] in 'aeiou':
 	print(f'{word}way')
 else:
 	print(f'{word[1:]}{word[0]}ay')
+
+# Exercise 2.3
+# Pig Latin but instead of a word, now we are asking for sentences as an input!
+for word in input('Enter a sentence: ').split():
+	if word[0] in 'aeiou':
+		print(f'{word}way', end=' ')
+	else:
+		print(f'{word[1:]}{word[0]}ay', end=' ')
+
+'''
+Alternative version, shorter but probably less readable
+for word in input('Enter a sentence: ').split():
+	print(f'{word}way', end=' ') if word[0] in 'aeiou' else print(f'{word[1:]}{word[0]}ay', end=' ')
+'''
