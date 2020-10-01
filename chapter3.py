@@ -61,8 +61,32 @@ def plus_minus(iterable):
 
 
 # A few test cases to check whether the function written above is working correctly.
-print(' ' * 14, 'Exercise 3')
-print(plus_minus([10, 20, 30, 40, 50, 60]))  # Expected output: 50
-print(plus_minus((8, 68, 46, 85, 16, 96, 58, 23)))  # Expected output: 160
-print(plus_minus([25, 49, 67, 85, 86]))  # Expected output: 6
+print(' ' * 14, 'Exercise 3', ' ' * 22, '*')
+print(plus_minus([10, 20, 30, 40, 50, 60]), ' ' * 45, '*')  # Expected output: 50
+print(plus_minus((8, 68, 46, 85, 16, 96, 58, 23)), ' ' * 44, '*')  # Expected output: 160
+print(plus_minus([25, 49, 67, 85, 86]), ' ' * 46, '*')  # Expected output: 6
+print('*' * 50)
+
+
+def my_sum(*items):
+	"""
+	Extending the function I wrote in Chapter 1 to be able to sum everything from strings to other iterables.
+	If the given parameters are digits then it returns the sum, if it is a collection then everything is
+	appended into collection.
+	:param items:
+	:return: iterable
+	"""
+	if not items:
+		return items
+	output = items[0]
+	for item in items[1:]:
+		output = output + item
+	return output
+
+
+print(' ' * 14, 'Exercise 4', ' ' * 22, '*')
+print(my_sum(), ' ' * 45, '*')
+print(my_sum(10, 20, 30, 40), ' ' * 44, '*')
+print(my_sum('a', 'b', 'c', 'd'), ' ' * 43, '*')
+print(my_sum([10, 20, 30], [40, 50, 60], [70, 80]), ' ' * 15, '*')
 print('*' * 50)
