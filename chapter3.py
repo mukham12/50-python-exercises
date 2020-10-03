@@ -84,9 +84,37 @@ def my_sum(*items):
 	return output
 
 
+# A few test cases to check whether the function written above is working correctly.
 print(' ' * 14, 'Exercise 4', ' ' * 22, '*')
 print(my_sum(), ' ' * 45, '*')
 print(my_sum(10, 20, 30, 40), ' ' * 44, '*')
 print(my_sum('a', 'b', 'c', 'd'), ' ' * 43, '*')
 print(my_sum([10, 20, 30], [40, 50, 60], [70, 80]), ' ' * 15, '*')
+print('*' * 50)
+
+
+# Extension function to the above exercise
+def sum_numeric(*items):
+	"""
+	Write a function that takes any number of arguments.
+	If the argument is or can be turned into an integer, then it should be
+	added to the total. Arguments that can't be handled as integers should be ignored.
+	:param items: any
+	:return: int
+	"""
+	total = 0
+	for item in items:
+		try:
+			total = total + int(item)
+		except ValueError:
+			pass
+	return total
+
+
+# A few test cases to check whether the function written above is working correctly.
+print(' ' * 14, 'Exercise 4', ' ' * 22, '*')
+print(sum_numeric(10, 20, 'a', '30', 'bcd'), ' ' * 45, '*')  # Expected output: 60
+print(sum_numeric('55', 20, 'abcd', '32', '3'), ' ' * 44, '*')  # Expected output: 110
+print(sum_numeric('15', '20', 'a', '35', 'bcd'), ' ' * 45, '*')  # Expected output: 70
+print(sum_numeric(31, 43, 41, 26, 39, 13, 'ab'), ' ' * 44, '*')  # Expected output: 193
 print('*' * 50)
