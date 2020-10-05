@@ -136,6 +136,20 @@ def alphabetize_names(list_of_dicts):
 	return sorted(list_of_dicts, key=operator.itemgetter('last', 'first'))
 
 
-print(' ' * 14, 'Exercise 5',)
+print(' ' * 14, 'Exercise 5')
 print(alphabetize_names(PEOPLE))
+print('*' * 50)
+
+
+def run_func_with_world(f):
+	"""
+	Calls the parameter function with a 'world' string parameter.
+	:param f: function
+	:return: function
+	"""
+	return f('world')
+
+
+print(' ' * 14, 'Exercise 6', ' ' * 22, '*')
+print(run_func_with_world(lambda name: f'Hello, {name}'), ' ' * 35, '*')
 print('*' * 50)
