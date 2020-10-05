@@ -1,3 +1,6 @@
+import operator
+
+
 def firstlast(iterable):
 	"""
 	Exercise 3.1
@@ -117,4 +120,22 @@ print(sum_numeric(10, 20, 'a', '30', 'bcd'), ' ' * 45, '*')  # Expected output: 
 print(sum_numeric('55', 20, 'abcd', '32', '3'), ' ' * 44, '*')  # Expected output: 110
 print(sum_numeric('15', '20', 'a', '35', 'bcd'), ' ' * 45, '*')  # Expected output: 70
 print(sum_numeric(31, 43, 41, 26, 39, 13, 'ab'), ' ' * 44, '*')  # Expected output: 193
+print('*' * 50)
+
+# A few test cases to check whether the function written above is working correctly.
+PEOPLE = [{'first': 'Reuven', 'last': 'Lerner',
+           'email': 'reuven@lerner.co.il'},
+          {'first': 'Donald', 'last': 'Trump',
+           'email': 'president@whitehouse.gov'},
+          {'first': 'Vladimir', 'last': 'Putin',
+           'email': 'president@kremvax.ru'}
+          ]
+
+
+def alphabetize_names(list_of_dicts):
+	return sorted(list_of_dicts, key=operator.itemgetter('last', 'first'))
+
+
+print(' ' * 14, 'Exercise 5',)
+print(alphabetize_names(PEOPLE))
 print('*' * 50)
