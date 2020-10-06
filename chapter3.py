@@ -1,4 +1,5 @@
 import operator
+from collections import Counter
 
 
 def firstlast(iterable):
@@ -152,4 +153,32 @@ def run_func_with_world(f):
 
 print(' ' * 14, 'Exercise 6', ' ' * 22, '*')
 print(run_func_with_world(lambda name: f'Hello, {name}'), ' ' * 35, '*')
+print('*' * 50)
+
+
+# Helper function for the next function
+def most_repeating_letter_count(word):
+	return Counter(word).most_common(1)[0][1]
+
+
+def most_repeating_word(words):
+	"""
+					Exercise 7
+	Write a function that takes a sequence of strings as input.
+	The function should return the string that contains the greatest
+	number of repeated letter. In other words, for each word,
+	find the letter that appears the most times. Find the word whose
+	most-repeated letter appears more than any other.
+
+	:param words: list
+	:return word: string
+	"""
+	return max(words, key=most_repeating_letter_count)
+
+
+print(' ' * 14, 'Exercise 7', ' ' * 22, '*')
+print(most_repeating_word(['this', 'is', 'an', 'elementary', 'test', 'example']), ' ' * 37, '*')
+print(most_repeating_word(['dividend', 'dialect', 'ensure', 'radio', 'announcement', 'consciousness', 'hierarchy']),
+      ' ' * 35, '*')
+print(most_repeating_word(['escape', 'reader', 'relaxation', 'perforate', 'government', 'consultation']), ' ' * 41, '*')
 print('*' * 50)
