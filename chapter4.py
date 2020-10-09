@@ -26,3 +26,30 @@ def restaurant():
 
 
 restaurant()
+
+
+def get_rainfall():
+	"""
+	Write a function that tracks rainfall in a number of cities. Users will enter the name of a city,
+	if the city name is blank, then the function prints a report before exiting. If the city name isn’t blank, then the
+	program should also ask the user how much rain has fallen in that city. After the user enters the quantity of rain,
+	the program again asks them for a city name, rainfall amount, and so on--until the user presses Enter instead of
+	typing the name of a city. When the user enters a blank city name, the program exits--but first, it reports how much
+	total rainfall there was in each city.
+
+	:return: string
+	"""
+	rainfall = {}
+	while True:
+		name = input('Enter city name: ')
+		if not name:
+			break
+
+		mm_rain = input('Enter how much rain has fallen in mm: ')
+		rainfall[name] = rainfall.get(name, 0) + int(mm_rain)
+
+	for city, rain in rainfall.items():
+		print(f'{city}: {rain}')
+
+
+get_rainfall()
