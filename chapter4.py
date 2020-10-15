@@ -1,3 +1,5 @@
+import os
+
 MENU = {'sandwich': 10, 'tea': 7, 'salad': 9}
 
 
@@ -113,8 +115,20 @@ def unique_number_count(numbers):
 
 
 print('Exercise 4\n')
-print('Unique numbers: ', unique_number_count([1, 2, 3, 4, 1, 2, 3]))       # Expected output: 4
-print('Unique numbers: ', unique_number_count([5, 5, 5, 5, 5, 5]))          # Expected output: 1
-print('Unique numbers: ', unique_number_count([]))                          # Expected output: 0
-print('Unique numbers: ', unique_number_count([1, 2, 3, 4, 5, 6, 7, 8]))    # Expected output: 8
+print('Unique numbers: ', unique_number_count([1, 2, 3, 4, 1, 2, 3]))  # Expected output: 4
+print('Unique numbers: ', unique_number_count([5, 5, 5, 5, 5, 5]))  # Expected output: 1
+print('Unique numbers: ', unique_number_count([]))  # Expected output: 0
+print('Unique numbers: ', unique_number_count([1, 2, 3, 4, 5, 6, 7, 8]))  # Expected output: 8
+print('*' * 50)
+
+'''
+Use os.listdir() to get the names of files in the current directory. What file extensions appear in the directory?
+Display the unique file extensions in the current directory.
+'''
+print('Exercise 4\n')
+unique_extensions = set()
+for extension in os.listdir():
+	unique_extensions.add(extension[extension.index('.'):])
+
+print('Unique files extensions in the current directory: ', unique_extensions)
 print('*' * 50)
