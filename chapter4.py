@@ -25,7 +25,9 @@ def restaurant():
 	print(f'Your total is {total}')
 
 
+print('Exercise 1\n')
 restaurant()
+print('*' * 50)
 
 
 def get_rainfall():
@@ -52,7 +54,9 @@ def get_rainfall():
 		print(f'{city}: {rain}')
 
 
+print('Exercise 2\n')
 get_rainfall()
+print('*' * 50)
 
 
 def dictdiff(a, b):
@@ -78,6 +82,7 @@ def dictdiff(a, b):
 
 
 # A few test cases to check if the function above is working correctly
+print('Exercise 3\n')
 d1 = {'a': 1, 'b': 2, 'c': 3}
 d2 = {'a': 1, 'b': 2, 'c': 4}
 print(dictdiff(d1, d1))
@@ -89,3 +94,27 @@ print(dictdiff(d3, d4))
 
 d5 = {'a': 1, 'b': 2, 'd': 4}
 print(dictdiff(d1, d5))
+print('*' * 50)
+
+
+# Exercise 4
+def unique_number_count(numbers):
+	"""
+	Write a function that returns the length of unique numbers in a given iterable.
+	For example, if the user enters [1, 2, 3, 1, 2, 3, 4] the length should be 4 because
+	[1, 2, 3] is duplicated therefore it is not going to be counted. This can easily be
+	achieved by using a set data structure since it removes duplicates by default.
+
+	:param numbers: iterable
+	:return: int
+	"""
+
+	return len(set(numbers))
+
+
+print('Exercise 4\n')
+print('Unique numbers: ', unique_number_count([1, 2, 3, 4, 1, 2, 3]))       # Expected output: 4
+print('Unique numbers: ', unique_number_count([5, 5, 5, 5, 5, 5]))          # Expected output: 1
+print('Unique numbers: ', unique_number_count([]))                          # Expected output: 0
+print('Unique numbers: ', unique_number_count([1, 2, 3, 4, 5, 6, 7, 8]))    # Expected output: 8
+print('*' * 50)
