@@ -1,4 +1,5 @@
 from io import StringIO
+from collections import defaultdict
 
 fakefile = StringIO('''
 nobody:*:-2:-2::0:0:Unprivileged User:/var/empty/:/usr/bin/false
@@ -22,3 +23,22 @@ def get_final_line(filename):
 
 
 print(get_final_line('/etc/passwd'))
+
+fake_vowels = StringIO('''This is just a test to see if the function implemented
+						above is correctly counting the vowels appearing in this text''')
+
+
+# Beyond exercise problem
+def count_vowels_file(filename):
+	count = defaultdict(lambda: 0)
+	for line in fake_vowels:
+		for character in line:
+			if character in 'aeiou':
+				count[character] += 1
+
+	for key, value in count.items():
+		print(key, ' ' * 10, value)
+	return ''
+
+
+print(count_vowels_file(''))
