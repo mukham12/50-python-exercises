@@ -1,5 +1,5 @@
-from io import StringIO
 from collections import defaultdict
+from io import StringIO
 
 fakefile = StringIO('''
 nobody:*:-2:-2::0:0:Unprivileged User:/var/empty/:/usr/bin/false
@@ -42,3 +42,23 @@ def count_vowels_file(filename):
 
 
 print(count_vowels_file(''))
+
+
+# Exercise 19
+def password_to_dict(filename):
+	"""
+	Write a function that reads from from a Unix-style "password file," commonly stored as /etc/passwd, and returns
+	a dictionary based on it.
+	:param filename: name of the file
+	:return: dict
+	"""
+	users = {}
+	with open(filename) as password:
+		for line in password:
+			if not line.startswith(('#', '\n')):
+				user_information = line.split(':')
+				users[user_information[0]] = int(user_information[2])
+	return users
+
+
+print(password_to_dict('/etc/passwd'))
