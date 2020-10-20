@@ -65,7 +65,7 @@ print(password_to_dict('/etc/passwd'))
 
 
 def wordcount(filename):
-	counts = {'Characters': 0, 'Words': 0, 'Lines': 0}
+	counts = {'characters': 0, 'words': 0, 'lines': 0}
 	unique_words = set()
 
 	for line in open(filename):
@@ -74,10 +74,10 @@ def wordcount(filename):
 		counts['words'] += len(line.split())
 
 		unique_words.update(line.split())
-	counts['Unique words'] = len(unique_words)
+	counts['unique words'] = len(unique_words)
 
 	for key, value in counts.items():
-		print(f'{key}: {value}')
+		print(f'{key.title()}: {value}')
 
 
 wordcount('sample_file.txt')
