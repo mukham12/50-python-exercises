@@ -61,7 +61,7 @@ def password_to_dict(filename):
 	return users
 
 
-print(password_to_dict('/etc/passwd'))
+# print(password_to_dict('/etc/passwd'))
 
 
 def wordcount(filename):
@@ -81,3 +81,19 @@ def wordcount(filename):
 
 
 wordcount('sample_file.txt')
+
+
+# Beyond exercise for wordcount
+def find_frequency():
+	frequency = {}
+	filename, word = input('Enter the filename followed by a word to be counted (separated by space): ').split(' ')
+	frequency[word] = 0
+	for line in open(filename):
+		for a_word in line.split():
+			if word == a_word:
+				frequency[word] += 1
+
+	print(f'The word "{word}" occurs {frequency[word]} times in the {filename}!')
+
+
+find_frequency()
