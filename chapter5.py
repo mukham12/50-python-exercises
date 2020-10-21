@@ -97,3 +97,20 @@ def find_frequency():
 
 
 find_frequency()
+
+
+def find_longest_word(filename):
+	"""
+	Exercise 21 Longest word per file
+
+	Write a function that takes in a filename as an argument and returns the longest word that occurs within that file.
+	:param filename: file
+	:return: longest word
+	"""
+
+	longest_word = ''
+	for line in open(filename):
+		for word in line.split():
+			if len(word) > len(longest_word):
+				longest_word = word
+	return longest_word
