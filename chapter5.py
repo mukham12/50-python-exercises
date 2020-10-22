@@ -1,5 +1,6 @@
 from collections import defaultdict
 from io import StringIO
+import csv
 
 fakefile = StringIO('''
 nobody:*:-2:-2::0:0:Unprivileged User:/var/empty/:/usr/bin/false
@@ -114,3 +115,16 @@ def find_longest_word(filename):
 			if len(word) > len(longest_word):
 				longest_word = word
 	return longest_word
+
+
+def passwd_to_csv(r_filename, w_filename):
+	with open(r_filename) as password, open(w_filename, 'w') as output:
+		infile = csv.reader(password, delimiter=':')
+		outfile = csv.writer(output, delimiter='\t')
+
+		for record in infile:
+			if len(record) > 0:
+				outfile.writerow((record[0], record[2]))
+
+
+passwd_to_csv('passwd', 'sample_csv')
