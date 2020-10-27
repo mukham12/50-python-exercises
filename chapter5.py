@@ -1,6 +1,7 @@
 from collections import defaultdict
 from io import StringIO
 import csv
+import json
 
 fakefile = StringIO('''
 nobody:*:-2:-2::0:0:Unprivileged User:/var/empty/:/usr/bin/false
@@ -128,3 +129,12 @@ def passwd_to_csv(r_filename, w_filename):
 
 
 passwd_to_csv('passwd', 'sample_csv')
+
+
+def print_scores(directory):
+	"""
+	Write a function that takes a directory name as an argument and prints a summary of the student scores it finds (JSON)
+	:param directory: Name of the directory
+	:return: None
+	"""
+
