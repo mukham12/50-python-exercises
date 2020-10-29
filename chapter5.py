@@ -168,3 +168,4 @@ def reverse_lines(infilename, outfilename):
 			outfile.write(f'{one_line.rstrip()[::-1]}\n')
 
 
+reverse_lines('sample_reverse.txt', 'output_reverse.txt')
