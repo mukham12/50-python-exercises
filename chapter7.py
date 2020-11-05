@@ -15,3 +15,16 @@ def sum_numbers(numbers):
 
 
 print(sum_numbers('1 2 3 a b c 4'))
+
+
+def flatten(l):
+	"""
+	Write a function that takes a list of lists (just one element deep)
+	and returns a flat, one-dimensional version of the list
+	:param l: 2D-list
+	:return: list
+	"""
+	return [element for sublist in l for element in sublist]
+
+
+print(flatten([[1, 2], [3, 4]]))
