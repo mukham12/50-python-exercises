@@ -28,3 +28,16 @@ def flatten(l):
 
 
 print(flatten([[1, 2], [3, 4]]))
+
+
+def flatten_odd_ints(l):
+	"""
+	Write a function that is almost identical to flatten written above but this function is going to
+	return a flattened list of only odd integers and nothing else.
+	:param l: 2D-list
+	:return: list
+	"""
+	return list(filter(lambda x: x % 2, [element for sublist in l for element in sublist]))
+
+
+print(flatten_odd_ints([[1, 2], [3, 4]]))
