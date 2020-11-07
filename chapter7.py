@@ -41,3 +41,16 @@ def flatten_odd_ints(l):
 
 
 print(flatten_odd_ints([[1, 2], [3, 4]]))
+
+
+def plword(word):
+	"""
+	Write a function that takes a filename as an argument. It returns a string with the file’s contents, but with each word translated into Pig Latin
+	:param word: string
+	:return: string
+	"""
+	return word + 'way' if word[0] in 'aeiou' else word[1:] + word[0] + 'ay'
+
+
+def plfile(filename):
+	return ' '.join(plword(one_word) for one_line in open(filename) for one_word in one_line.split())
