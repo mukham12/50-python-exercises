@@ -54,3 +54,15 @@ def plword(word):
 
 def plfile(filename):
 	return ' '.join(plword(one_word) for one_line in open(filename) for one_word in one_line.split())
+
+
+def flipped_dict(dictionary):
+	"""
+	Write a function that will flip the dictionary.
+	:param dictionary: dict
+	:return: dict
+	"""
+	return {value: key for key, value in dictionary.items()}
+
+
+print(flipped_dict({'a': 1, 'b': 2, 'c': 3}))
