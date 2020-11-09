@@ -82,3 +82,16 @@ def transform_values(function, dictionary):
 
 d = {'a': 1, 'b': 2, 'c': 3}
 print(transform_values(lambda x: x * x, d))
+
+
+def get_sv(filename):
+	"""
+	Write a function that returns a set of all “supervocalic” words in the dict. Simply put, supervocalic words contain
+	all five vowels in English (a, e, i, o, and u), each of them appearing once and in alphabetical order.
+	For the purposes of this exercise, accepting any word that has all five vowels, in any order and any number of times.
+	The function should find all of the words that match this definition (i.e., contain a, e, i, o, and u) and return a
+	set containing them.
+	:param filename: Name of the file
+	:return: set
+	"""
+	return {word.strip() for word in open(filename) if {'a', 'e', 'i', 'o', 'u'} < set(word.lower())}
