@@ -1,3 +1,6 @@
+import string
+
+
 def join_numbers(numbers):
 	return ','.join(str(number) for number in numbers)
 
@@ -95,3 +98,15 @@ def get_sv(filename):
 	:return: set
 	"""
 	return {word.strip() for word in open(filename) if {'a', 'e', 'i', 'o', 'u'} < set(word.lower())}
+
+
+def gematria_dict():
+	"""
+	Write a function that numbers all the lowercase letters of the English alphabet and numbers them from 1 to 26.
+	The return type is a dictionary so the keys are the letters and the values are the numbers.
+	:return: dict
+	"""
+	return {char: index for index, char in enumerate(string.ascii_lowercase, 1)}
+
+
+print(gematria_dict())
