@@ -26,6 +26,8 @@ class Scoop:
 		self.flavor = flavor
 
 
+# Alternative way of creating scoops.
+# scoops = [Scoop(flavor) for flavor in ('chocolate', 'vanilla', 'persimmon')]
 def create_scoops():
 	scoops = [Scoop('chocolate'), Scoop('vanilla'), Scoop('persimmon')]
 	for scoop in scoops:
