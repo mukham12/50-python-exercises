@@ -35,3 +35,19 @@ def create_scoops():
 
 
 create_scoops()
+
+'''
+Create a Bowl class representing a bowl into which we can put our ice cream. No modification for Scoop class needed.
+'''
+
+
+class Bowl:
+	def __init__(self):
+		self.scoops = []
+
+	def add_scoops(self, *new_scoops):
+		for scoop in new_scoops:
+			self.scoops.append(scoop)
+
+	def __repr__(self):
+		return '\n'.join(s.flavor.title() for s in self.scoops)
