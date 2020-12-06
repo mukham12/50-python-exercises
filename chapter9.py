@@ -52,6 +52,7 @@ class Bowl:
 	def __repr__(self):
 		return '\n'.join(s.flavor.title() for s in self.scoops)
 
+
 s1 = Scoop('chocolate')
 s2 = Scoop('vanilla')
 s3 = Scoop('persimmon')
@@ -60,3 +61,18 @@ b = Bowl()
 b.add_scoops(s1, s2)
 b.add_scoops(s3)
 print(b)
+
+'''
+Beyond the exercise assignment.
+Create a Book class which will have a title, author and a price. Then, create a Shelf class which will contains books
+and it should allow books to be added by a method called "add_book". Finally, implement "total_price" method which will 
+total the prices of the books on the shelf.
+'''
+
+
+class Book:
+	def __init__(self, title, author, price):
+		self.title = title
+		self.author = author
+		self.price = price
+
