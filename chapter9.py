@@ -76,3 +76,11 @@ class Book:
 		self.author = author
 		self.price = price
 
+
+class Shelf:
+	def __init__(self):
+		self.books = []
+
+	def add_book(self, *new_books):
+		for book in new_books:
+			self.books.append(book)
