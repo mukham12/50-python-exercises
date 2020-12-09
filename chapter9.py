@@ -71,10 +71,11 @@ total the prices of the books on the shelf.
 
 
 class Book:
-	def __init__(self, title, author, price):
+	def __init__(self, title, author, price, width):
 		self.title = title
 		self.author = author
 		self.price = price
+		self.width = width
 
 
 class Shelf:
