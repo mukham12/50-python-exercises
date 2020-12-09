@@ -90,3 +90,9 @@ class Shelf:
 		for book in self.books:
 			total += book.price
 		return total
+
+	def has_book(self, title):
+		for book in self.books:
+			if title.lower() == book.lower():
+				return True
+		return False
