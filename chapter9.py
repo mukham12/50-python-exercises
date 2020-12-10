@@ -79,15 +79,16 @@ class Book:
 
 
 class Shelf:
-	def __init__(self):
+	def __init__(self, width):
 		self.books = []
+		self.width = width
 
 	def add_book(self, *new_books):
 		for book in new_books:
 			self.books.append(book)
 
 	def total_price(self):
-		return sum (book.price for book in self.books)
+		return sum(book.price for book in self.books)
 
 	def has_book(self, title):
 		return title in (book.title for book in self.books)
