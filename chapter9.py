@@ -89,6 +89,8 @@ class Shelf:
 
 	def add_book(self, *new_books):
 		for book in new_books:
+			if self.total_width() + book.width > self.width:
+				raise ManyBooksOnShelfError('Too many books!')
 			self.books.append(book)
 
 	def total_price(self):
