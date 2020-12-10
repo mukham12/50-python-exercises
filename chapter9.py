@@ -87,10 +87,7 @@ class Shelf:
 			self.books.append(book)
 
 	def total_price(self):
-		total = 0
-		for book in self.books:
-			total += book.price
-		return total
+		return sum (book.price for book in self.books)
 
 	def has_book(self, title):
 		return title in (book.title for book in self.books)
