@@ -70,6 +70,10 @@ total the prices of the books on the shelf.
 '''
 
 
+class ManyBooksOnShelfError(Exception):
+	pass
+
+
 class Book:
 	def __init__(self, title, author, price, width):
 		self.title = title
@@ -92,3 +96,6 @@ class Shelf:
 
 	def has_book(self, title):
 		return title in (book.title for book in self.books)
+
+	def total_width(self):
+		return sum(book.width for book in self.books)
