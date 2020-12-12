@@ -107,3 +107,20 @@ class Shelf:
 
 	def total_width(self):
 		return sum(book.width for book in self.books)
+
+
+# Create a Person class with a class attribute that increases each time a new instance of the class is created.
+class Person:
+	population = 0
+
+	def __init__(self):
+		Person.population += 1
+
+
+p1 = Person()
+p2 = Person()
+p3 = Person()
+p4 = Person()
+p5 = Person()
+
+print(p1.population, ' ' * 5, Person.population)
