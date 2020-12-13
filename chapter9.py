@@ -116,6 +116,9 @@ class Person:
 	def __init__(self):
 		Person.population += 1
 
+	def __del__(self):
+		Person.population -= 1
+
 
 p1 = Person()
 p2 = Person()
@@ -123,4 +126,9 @@ p3 = Person()
 p4 = Person()
 p5 = Person()
 
-print(p1.population, ' ' * 5, Person.population)
+print("Before triggering __del__: ",  p1.population, ' ' * 5, Person.population)
+
+del p1, p4
+
+print("After triggering __del__: ", p2.population, ' ' * 5, Person.population)
+
