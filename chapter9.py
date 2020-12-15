@@ -126,9 +126,18 @@ p3 = Person()
 p4 = Person()
 p5 = Person()
 
-print("Before triggering __del__: ",  p1.population, ' ' * 5, Person.population)
+print("Before triggering __del__: ", p1.population, ' ' * 5, Person.population)
 
 del p1, p4
 
 print("After triggering __del__: ", p2.population, ' ' * 5, Person.population)
 
+
+class Transaction:
+	balance = 0
+
+	def __init__(self, amount):
+		if amount < 0:
+			Transaction.balance -= amount
+		else:
+			Transaction.balance += amount
