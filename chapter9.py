@@ -49,11 +49,15 @@ class Bowl:
 
 	def add_scoops(self, *new_scoops):
 		for scoop in new_scoops:
-			if len(self.scoops) < Bowl.max_scoops:
+			if len(self.scoops) < self.max_scoops:
 				self.scoops.append(scoop)
 
 	def __repr__(self):
 		return '\n'.join(s.flavor.title() for s in self.scoops)
+
+
+class BigBowl(Bowl):
+	max_scoops = 5
 
 
 s1 = Scoop('chocolate')
@@ -62,11 +66,11 @@ s3 = Scoop('persimmon')
 s4 = Scoop('flavor 4')
 s5 = Scoop('flavor 5')
 
-b = Bowl()
-b.add_scoops(s1, s2)
-b.add_scoops(s3)
-b.add_scoops(s4, s5)
-print(b)
+bb = BigBowl()
+bb.add_scoops(s1, s2)
+bb.add_scoops(s3)
+bb.add_scoops(s4, s5)
+print(bb)
 
 '''
 Beyond the exercise assignment.
@@ -141,3 +145,24 @@ class Transaction:
 			Transaction.balance -= amount
 		else:
 			Transaction.balance += amount
+
+
+class Envelope:
+	postage_multiplier = 10
+
+	def __init__(self, weight):
+		self.weight = weight
+		self.postage = 0
+		self.was_sent = False
+
+	def add_postage(self, amount):
+		self.postage += amount
+
+	def send(self):
+		if self.postage >= self.weight * self.postage_multiplier:
+			self.was_sent = True
+		else:
+			raise NotEnoughPostageError('You do not have enough postages')
+
+
+
