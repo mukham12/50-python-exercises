@@ -165,4 +165,10 @@ class Envelope:
 			raise NotEnoughPostageError('You do not have enough postages')
 
 
+class NotEnoughPostageError(Exception):
+	pass
+
+
+class BigEnvelope(Envelope):
+	postage_multiplier = 15
 
