@@ -188,6 +188,11 @@ class FlexibleDict(dict):
 		return dict.__getitem__(self, key)
 
 
+class StringKeyDict(dict):
+	def __setitem__(self, key, value):
+		dict.__setitem__(self, str(key), value)
+
+
 fd = FlexibleDict()
 fd['a'] = 100
 print(fd['a'])
@@ -200,3 +205,7 @@ print(fd['1'])
 
 fd['1'] = 100
 print(fd[1])
+
+string_dict = StringKeyDict()
+string_dict[10] = 100
+print(string_dict['10'])
