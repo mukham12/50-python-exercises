@@ -187,6 +187,7 @@ class FlexibleDict(dict):
 
 		return dict.__getitem__(self, key)
 
+
 fd = FlexibleDict()
 fd['a'] = 100
 print(fd['a'])
@@ -199,4 +200,3 @@ print(fd['1'])
 
 fd['1'] = 100
 print(fd[1])
-
