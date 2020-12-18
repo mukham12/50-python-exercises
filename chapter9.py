@@ -209,3 +209,12 @@ print(fd[1])
 string_dict = StringKeyDict()
 string_dict[10] = 100
 print(string_dict['10'])
+
+
+class FlatList(list):
+	def append(self, values):
+		try:
+			for value in values:
+				list.append(value)
+		except TypeError:
+			list.append(self, values)
