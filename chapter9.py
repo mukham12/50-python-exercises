@@ -211,6 +211,18 @@ string_dict[10] = 100
 print(string_dict['10'])
 
 
+class RecentDict(dict):
+	def __init__(self, maxsize):
+		super().__init__()
+		self.maxsize = maxsize
+
+	def __setitem__(self, key, value):
+		dict.__setitem__(self, str(key), value)
+
+		if len(self) > self.maxsize:
+			self.pop(list(self.keys())[0])
+
+
 class FlatList(list):
 	def append(self, values):
 		try:
