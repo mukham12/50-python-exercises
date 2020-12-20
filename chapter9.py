@@ -242,3 +242,13 @@ class Bread:
 
 	def get_nutrition(self, slices):
 		return {key: value * slices for key, value in vars(self).items()}
+
+
+class WholeWheatBread(Bread):
+	def __init__(self):
+		super().__init__()
+		self.calories = 67
+		self.carbs = 12
+		self.sodium = 138
+		self.sugar = 1.4
+		self.fat = 1
