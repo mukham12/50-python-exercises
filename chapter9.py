@@ -246,7 +246,6 @@ class Bread:
 
 class WholeWheatBread(Bread):
 	def __init__(self):
-		super().__init__()
 		self.calories = 67
 		self.carbs = 12
 		self.sodium = 138
@@ -256,9 +255,18 @@ class WholeWheatBread(Bread):
 
 class RyeBread(Bread):
 	def __init__(self):
-		super().__init__()
 		self.calories = 67
 		self.carbs = 12
 		self.sodium = 172
 		self.sugar = 1
 		self.fat = 0.8
+
+
+class Animal:
+	def __init__(self, color, legs):
+		self.species = self.__class__.__name__
+		self.color = color
+		self.legs = legs
+
+	def __repr__(self):
+		return f'{self.color} {self.species} {self}, {self.legs} legs'
