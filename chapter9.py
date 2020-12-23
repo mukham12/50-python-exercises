@@ -269,4 +269,10 @@ class Animal:
 		self.legs = legs
 
 	def __repr__(self):
-		return f'{self.color} {self.species} {self}, {self.legs} legs'
+		return f'{self.color.title()} {self.species}, {self.legs} legs'
+
+
+class Wolf(Animal):
+	def __init__(self, color):
+		super().__init__(color, 4)
+
