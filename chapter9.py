@@ -285,3 +285,16 @@ class Sheep(Animal):
 class Snake(Animal):
 	def __init__(self, color):
 		super().__init__(color, 0)
+
+
+class Parrot(Animal):
+	def __init__(self, color):
+		super().__init__(color, 2)
+
+
+wolf = Wolf('black')
+sheep = Sheep('white')
+snake = Snake('brown')
+parrot = Parrot('green')
+
+print(wolf, sheep, snake, parrot, sep='\n')
