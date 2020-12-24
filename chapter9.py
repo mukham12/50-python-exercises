@@ -280,3 +280,8 @@ class Wolf(Animal):
 class Sheep(Animal):
 	def __init__(self, color):
 		super().__init__(color, 4)
+
+
+class Snake(Animal):
+	def __init__(self, color):
+		super().__init__(color, 0)
