@@ -272,6 +272,11 @@ class Animal:
 		return f'{self.color.title()} {self.species}, {self.legs} legs'
 
 
+class ZeroLeggedAnimal(Animal):
+	def __init__(self, color):
+		super().__init__(color, 0)
+
+
 class Wolf(Animal):
 	def __init__(self, color):
 		super().__init__(color, 4)
@@ -282,9 +287,9 @@ class Sheep(Animal):
 		super().__init__(color, 4)
 
 
-class Snake(Animal):
+class Snake(ZeroLeggedAnimal):
 	def __init__(self, color):
-		super().__init__(color, 0)
+		super().__init__(color)
 
 
 class Parrot(Animal):
