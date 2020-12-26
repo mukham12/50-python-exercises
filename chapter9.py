@@ -263,10 +263,9 @@ class RyeBread(Bread):
 
 
 class Animal:
-	def __init__(self, color, legs):
+	def __init__(self, color):
 		self.species = self.__class__.__name__
 		self.color = color
-		self.legs = legs
 
 	def __repr__(self):
 		return f'{self.color.title()} {self.species}, {self.legs} legs'
@@ -274,17 +273,30 @@ class Animal:
 
 class ZeroLeggedAnimal(Animal):
 	def __init__(self, color):
-		super().__init__(color, 0)
+		super().__init__(color)
+		self.legs = 0
 
 
-class Wolf(Animal):
+class TwoLeggedAnimal(Animal):
 	def __init__(self, color):
-		super().__init__(color, 4)
+		super().__init__(color)
+		self.legs = 2
 
 
-class Sheep(Animal):
+class FourLeggedAnimal(Animal):
 	def __init__(self, color):
-		super().__init__(color, 4)
+		super().__init__(color)
+		self.legs = 4
+
+
+class Wolf(FourLeggedAnimal):
+	def __init__(self, color):
+		super().__init__(color)
+
+
+class Sheep(FourLeggedAnimal):
+	def __init__(self, color):
+		super().__init__(color)
 
 
 class Snake(ZeroLeggedAnimal):
@@ -292,9 +304,9 @@ class Snake(ZeroLeggedAnimal):
 		super().__init__(color)
 
 
-class Parrot(Animal):
+class Parrot(TwoLeggedAnimal):
 	def __init__(self, color):
-		super().__init__(color, 2)
+		super().__init__(color)
 
 
 wolf = Wolf('black')
