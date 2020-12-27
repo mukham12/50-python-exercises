@@ -277,6 +277,16 @@ class Phone:
 		return f'Dialing {number}'
 
 
+class SmartPhone(Phone):
+	def run_app(self, app_name):
+		return f'Running an app: {app_name}'
+
+
+class iPhone(SmartPhone):
+	def run_app(self, app_name):
+		return super().run_app(app_name).lower()
+
+
 class Animal:
 	def __init__(self, color):
 		self.species = self.__class__.__name__
