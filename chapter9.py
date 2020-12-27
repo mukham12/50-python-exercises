@@ -262,6 +262,21 @@ class RyeBread(Bread):
 		self.fat = 0.8
 
 
+'''
+Create a class that represents a mobile phone. The phone should implement a dial method that dials a phone number.
+Implement SmartPhone subclass that uses the Phone.dial method but implements its own run_app method.
+Lastly, implement an iPhone class that implements both of its parent class methods (dial and run_app)
+'''
+
+
+class Phone:
+	def __init__(self):
+		pass
+
+	def dial(self, number):
+		return f'Dialing {number}'
+
+
 class Animal:
 	def __init__(self, color):
 		self.species = self.__class__.__name__
