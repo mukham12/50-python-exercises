@@ -343,19 +343,26 @@ print(wolf, sheep, snake, parrot, sep='\n')
 
 
 class Cage:
+	max_animals = 3
+
 	def __init__(self, number):
 		self.number = number
 		self.animals = []
 
 	def add_animals(self, *animals):
 		for animal in animals:
-			self.animals.append(animal)
+			if len(animals) < self.max_animals:
+				self.animals.append(animal)
 
 	def __repr__(self):
 		output = f'Cage {self.number}\n'
 		output += '\n'.join('\t' + str(animal) for animal in self.animals)
 
 		return output
+
+
+class BigCage(Cage):
+	max_animals = 5
 
 
 c1 = Cage(1)
