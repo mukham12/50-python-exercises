@@ -315,21 +315,29 @@ class FourLeggedAnimal(Animal):
 
 
 class Wolf(FourLeggedAnimal):
+	space_required = 10
+
 	def __init__(self, color):
 		super().__init__(color)
 
 
 class Sheep(FourLeggedAnimal):
+	space_required = 5
+
 	def __init__(self, color):
 		super().__init__(color)
 
 
 class Snake(ZeroLeggedAnimal):
+	space_required = 2
+
 	def __init__(self, color):
 		super().__init__(color)
 
 
 class Parrot(TwoLeggedAnimal):
+	space_required = 1
+
 	def __init__(self, color):
 		super().__init__(color)
 
@@ -372,3 +380,5 @@ c2 = Cage(2)
 c2.add_animals(snake, parrot)
 
 print(c1, c2, sep='\n')
+
+
