@@ -342,6 +342,10 @@ class Parrot(TwoLeggedAnimal):
 		super().__init__(color)
 
 
+class NotEnoughSpaceError(Exception):
+	pass
+
+
 wolf = Wolf('black')
 sheep = Sheep('white')
 snake = Snake('brown')
@@ -362,6 +366,9 @@ class Cage:
 			if len(animals) < self.max_animals:
 				self.animals.append(animal)
 
+	def space_used(self):
+		return sum(one_animal.space_required for one_animal in self.animals)
+
 	def __repr__(self):
 		output = f'Cage {self.number}\n'
 		output += '\n'.join('\t' + str(animal) for animal in self.animals)
@@ -380,5 +387,3 @@ c2 = Cage(2)
 c2.add_animals(snake, parrot)
 
 print(c1, c2, sep='\n')
-
-
