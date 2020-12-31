@@ -316,6 +316,7 @@ class FourLeggedAnimal(Animal):
 
 class Wolf(FourLeggedAnimal):
 	space_required = 10
+	sound = 'awooo'
 
 	def __init__(self, color):
 		super().__init__(color)
@@ -323,6 +324,7 @@ class Wolf(FourLeggedAnimal):
 
 class Sheep(FourLeggedAnimal):
 	space_required = 5
+	sound = 'baa'
 
 	def __init__(self, color):
 		super().__init__(color)
@@ -330,6 +332,7 @@ class Sheep(FourLeggedAnimal):
 
 class Snake(ZeroLeggedAnimal):
 	space_required = 2
+	sound = 'hiss'
 
 	def __init__(self, color):
 		super().__init__(color)
@@ -337,6 +340,7 @@ class Snake(ZeroLeggedAnimal):
 
 class Parrot(TwoLeggedAnimal):
 	space_required = 1
+	sound = 'Polly wants a cracker!'
 
 	def __init__(self, color):
 		super().__init__(color)
