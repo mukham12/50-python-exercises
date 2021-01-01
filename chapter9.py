@@ -357,6 +357,12 @@ parrot = Parrot('green')
 
 print(wolf, sheep, snake, parrot, sep='\n')
 
+animal_safety = {Wolf: [Wolf, Snake, Parrot], Sheep: [Sheep, Snake, Parrot], Snake: [Wolf, Sheep], Parrot: [Wolf, Sheep]}
+
+
+class DangerousAssignmentError(Exception):
+	pass
+
 
 class Cage:
 	max_animals = 3
