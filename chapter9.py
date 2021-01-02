@@ -357,7 +357,8 @@ parrot = Parrot('green')
 
 print(wolf, sheep, snake, parrot, sep='\n')
 
-animal_safety = {Wolf: [Wolf, Snake, Parrot], Sheep: [Sheep, Snake, Parrot], Snake: [Wolf, Sheep], Parrot: [Wolf, Sheep]}
+animal_safety = {Wolf: [Wolf, Snake, Parrot], Sheep: [Sheep, Snake, Parrot], Snake: [Wolf, Sheep],
+                 Parrot: [Wolf, Sheep]}
 
 
 class DangerousAssignmentError(Exception):
@@ -397,3 +398,33 @@ c2 = Cage(2)
 c2.add_animals(snake, parrot)
 
 print(c1, c2, sep='\n')
+
+
+class Zoo:
+	"""A class to place Animal classes in."""
+
+	def __init__(self):
+		self.cages = []
+
+	def add_cages(self, *cages):
+		"""Add one or more cages to our zoo"""
+		for cage in cages:
+			self.cages.append(cage)
+
+	def __repr__(self):
+		return '\n'.join(str(one_cage) for one_cage in self.cages)
+
+	def animals_by_color(self, color):
+		"""Return a list of Animal objects whose color matches the requested color"""
+
+		return [animal for cage in self.cages for animal in cage.animals if animal.color == color]
+
+	def animals_by_legs(self, legs):
+		"""Return a list of Animal objects whose number of legs matches the requested number"""
+
+		return [animal for cage in self.cages for animal in cage.animals if animal.number_of_legs == legs]
+
+	def number_of_legs(self):
+		"""Return the total number of legs of all animals"""
+
+		return sum(animal.number_of_legs for cage in self.cages for animal in cage.animals)
