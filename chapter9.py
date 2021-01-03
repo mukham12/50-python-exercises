@@ -412,7 +412,7 @@ class Zoo:
 			self.cages.append(cage)
 
 	def __repr__(self):
-		return '\n'.join(str(one_cage) for one_cage in self.cages)
+		return '\n'.join(str(cage) for cage in self.cages)
 
 	def animals_by_color(self, color):
 		"""Return a list of Animal objects whose color matches the requested color"""
