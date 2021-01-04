@@ -428,3 +428,8 @@ class Zoo:
 		"""Return the total number of legs of all animals"""
 
 		return sum(animal.number_of_legs for cage in self.cages for animal in cage.animals)
+
+	def animals_by(self, **kwargs):
+		print(f'{kwargs=}')
+		return [animal for cage in self.cages for animal in cage.animals if (('color' in kwargs and animal.color == kwargs['color']) and (
+						'legs' in kwargs and animal.number_of_legs == kwargs['legs']))]
