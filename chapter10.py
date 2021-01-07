@@ -46,3 +46,15 @@ class CircleIterator:
 		return value
 
 
+class Circle:
+	"""
+	Class that produces an iterator, which repeatedly cycles through the elements of an iterator until returning
+	max_times items.
+	"""
+
+	def __init__(self, data, max_times):
+		self.data = data
+		self.max_times = max_times
+
+	def __iter__(self):
+		return CircleIterator(self.data, self.max_times)
