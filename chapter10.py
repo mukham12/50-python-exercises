@@ -20,3 +20,11 @@ class MyEnumerate:
 
 	def __iter__(self):
 		return MyEnumerateIterator(self.data, self.start)
+
+
+def my_enumerate(data, start=0):
+	index = start
+
+	for one_item in data:
+		yield index, one_item
+		index += 1
