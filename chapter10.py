@@ -28,3 +28,21 @@ def my_enumerate(data, start=0):
 	for one_item in data:
 		yield index, one_item
 		index += 1
+
+
+class CircleIterator:
+	"""Iterator for Circle."""
+
+	def __init__(self, data, max_times):
+		self.data = data
+		self.max_times = max_times
+		self.index = 0
+
+	def __next__(self):
+		if self.index >= self.max_times:
+			raise StopIteration
+		value = self.data[self.index % len(self.data)]
+		self.index += 1
+		return value
+
+
