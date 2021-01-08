@@ -31,8 +31,6 @@ def my_enumerate(data, start=0):
 
 
 class CircleIterator:
-	"""Iterator for Circle."""
-
 	def __init__(self, data, max_times):
 		self.data = data
 		self.max_times = max_times
@@ -41,20 +39,19 @@ class CircleIterator:
 	def __next__(self):
 		if self.index >= self.max_times:
 			raise StopIteration
-		value = self.data[self.index % len(self.data)]
+
+		iterated_data = getattr(self, self.returns)
+
+		value = iterated_data[self.index % len(iterated_data)]
 		self.index += 1
 		return value
 
-
-class Circle:
-	"""
-	Class that produces an iterator, which repeatedly cycles through the elements of an iterator until returning
-	max_times items.
-	"""
-
-	def __init__(self, data, max_times):
-		self.data = data
-		self.max_times = max_times
-
 	def __iter__(self):
-		return CircleIterator(self.data, self.max_times)
+		return type(self)(self.data, self.max_times)
+
+
+class Circle(CircleIterator):
+	def __init__(self, data, max_times):
+		super().__init__(data, max_times)
+		self.returns = 'data'
+
