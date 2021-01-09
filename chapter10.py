@@ -55,3 +55,7 @@ class Circle(CircleIterator):
 		super().__init__(data, max_times)
 		self.returns = 'data'
 
+
+def circle(data, max_times):
+	for index in range(max_times):
+		yield data[index % len(data)]
