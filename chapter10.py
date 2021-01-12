@@ -1,3 +1,6 @@
+import os
+
+
 class MyEnumerateIterator:
 	def __init__(self, data, start):
 		self.data = data
@@ -81,3 +84,18 @@ class MyRange:
 		value = self.current
 		self.current += self.step
 		return value
+
+
+def all_lines(path):
+	"""
+	An iterator that returns, one at a time, each line from each file in a named directory.
+	Any file that cannot be opened, for whatever reason, is ignored.
+	"""
+
+	for filename in os.listdir(path):
+		full_filename = os.path.join(path, filename)
+		try:
+			for line in open(full_filename):
+				yield line
+		except OSError:
+			pass
