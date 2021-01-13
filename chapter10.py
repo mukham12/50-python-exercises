@@ -53,6 +53,8 @@ class CircleIterator:
 		return type(self)(self.data, self.max_times)
 
 
+# A class that iterates over data and if the index ever is greater than data then it will return back and start from
+# the beginning.
 class Circle(CircleIterator):
 	def __init__(self, data, max_times):
 		super().__init__(data, max_times)
@@ -64,6 +66,7 @@ def circle(data, max_times):
 		yield data[index % len(data)]
 
 
+# A class that mimics the work of built-in function range which is an iterable and used extensively with for loops.
 class MyRange:
 	def __init__(self, first, second=None, step=1):
 		if second is None:
