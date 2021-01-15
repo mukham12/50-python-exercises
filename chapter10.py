@@ -102,3 +102,13 @@ def all_lines(path):
 				yield line
 		except OSError:
 			pass
+
+
+def all_lines_tuple(path):
+	for file_index, filename in enumerate(os.listdir(path)):
+		full_filename = os.path.join(path, filename)
+		try:
+			for line_index, line in enumerate(open(full_filename)):
+				yield full_filename, file_index, line_index, line
+		except OSError:
+			pass
