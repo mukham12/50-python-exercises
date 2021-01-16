@@ -112,3 +112,27 @@ def all_lines_tuple(path):
 				yield full_filename, file_index, line_index, line
 		except OSError:
 			pass
+
+
+def open_file_safely(filename):
+	try:
+		return open(filename)
+	except OSError:
+		return None
+
+
+def all_lines_alt(path):
+	all_files = [open_file_safely(os.path.join(path, filename)) for filename in os.listdir(path)]
+
+	while all_files:
+		for one_file in all_files:
+			if one_file is None:
+				all_files.remove(one_file)
+				continue
+
+			one_line = one_file.readline()
+
+			if one_line:
+				yield one_line
+			else:
+				all_files.remove(one_file)
