@@ -136,3 +136,14 @@ def all_lines_alt(path):
 				yield one_line
 			else:
 				all_files.remove(one_file)
+
+
+def all_lines(path, s):
+	for filename in os.listdir(path):
+		full_filename = os.path.join(path, filename)
+		try:
+			for line in open(full_filename):
+				if s in line:
+					yield line
+		except OSError:
+			pass
