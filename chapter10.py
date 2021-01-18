@@ -1,4 +1,5 @@
 import os
+import time
 
 
 class MyEnumerateIterator:
@@ -147,3 +148,17 @@ def all_lines(path, s):
 					yield line
 		except OSError:
 			pass
+
+
+def elapsed_since(data):
+	"""
+	A generator that takes an iterable as input. With each iteration, it yields a tuple containing the
+	data and the time since the previous iteration.
+	"""
+
+	last_time = None
+	for item in data:
+		current_time = time.perf_counter()
+		delta = current_time - (last_time or current_time)
+		last_time = time.perf_counter()
+		yield delta, item
