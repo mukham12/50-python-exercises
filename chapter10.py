@@ -175,3 +175,11 @@ def elapsed_since(data, min_wait):
 
 		last_time = time.perf_counter()
 		yield delta, item
+
+
+def file_usage_timing(dirname):
+	for one_filename in os.listdir(dirname):
+		full_filename = os.path.join(dirname, one_filename)
+
+		yield full_filename, os.stat(full_filename).st_mtime, os.stat(full_filename).st_ctime, os.stat(
+			full_filename).st_atime
