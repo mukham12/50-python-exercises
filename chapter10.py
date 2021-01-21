@@ -189,3 +189,14 @@ def yield_filter(data, func):
 	for one_item in data:
 		if func(one_item):
 			yield one_item
+
+
+def mychain(*args):
+	"""
+	Generator that takes any number of iterables as arguments. It yields, one at a time, each of the
+	elements of each iterable. It is similar to itertools.chain.
+	"""
+
+	for arg in args:
+		for item in arg:
+			yield item
