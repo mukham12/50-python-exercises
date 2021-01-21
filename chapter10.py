@@ -183,3 +183,9 @@ def file_usage_timing(dirname):
 
 		yield full_filename, os.stat(full_filename).st_mtime, os.stat(full_filename).st_ctime, os.stat(
 			full_filename).st_atime
+
+
+def yield_filter(data, func):
+	for one_item in data:
+		if func(one_item):
+			yield one_item
