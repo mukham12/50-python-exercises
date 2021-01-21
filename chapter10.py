@@ -200,3 +200,8 @@ def mychain(*args):
 	for arg in args:
 		for item in arg:
 			yield item
+
+
+def myzip(*args):
+	for i in range(len(min(args, key=len))):
+		yield tuple(arg[i] for arg in args)
