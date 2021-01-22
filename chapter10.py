@@ -90,19 +90,19 @@ class MyRange:
 		return value
 
 
-def all_lines(path):
-	"""
-	An iterator that returns, one at a time, each line from each file in a named directory.
-	Any file that cannot be opened, for whatever reason, is ignored.
-	"""
-
-	for filename in os.listdir(path):
-		full_filename = os.path.join(path, filename)
-		try:
-			for line in open(full_filename):
-				yield line
-		except OSError:
-			pass
+# def all_lines(path):
+# 	"""
+# 	An iterator that returns, one at a time, each line from each file in a named directory.
+# 	Any file that cannot be opened, for whatever reason, is ignored.
+# 	"""
+#
+# 	for filename in os.listdir(path):
+# 		full_filename = os.path.join(path, filename)
+# 		try:
+# 			for line in open(full_filename):
+# 				yield line
+# 		except OSError:
+# 			pass
 
 
 def all_lines_tuple(path):
@@ -182,7 +182,7 @@ def file_usage_timing(dirname):
 		full_filename = os.path.join(dirname, one_filename)
 
 		yield full_filename, os.stat(full_filename).st_mtime, os.stat(full_filename).st_ctime, os.stat(
-			full_filename).st_atime
+				full_filename).st_atime
 
 
 def yield_filter(data, func):
@@ -200,6 +200,10 @@ def mychain(*args):
 	for arg in args:
 		for item in arg:
 			yield item
+
+
+def all_lines(p):
+	return mychain(*(open(os.path.join(p, file)) for file in os.listdir(p) if os.path.isfile(os.path.join(p, file))))
 
 
 def myzip(*args):
