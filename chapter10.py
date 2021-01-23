@@ -209,3 +209,17 @@ def all_lines(p):
 def myzip(*args):
 	for i in range(len(min(args, key=len))):
 		yield tuple(arg[i] for arg in args)
+
+
+def myrange(first, second=None, step=1):
+	if second is None:
+		current = 0
+		stop = first
+
+	else:
+		current = first
+		stop = second
+
+	while current < stop:
+		yield current
+		current += step
