@@ -223,3 +223,8 @@ def myrange(first, second=None, step=1):
 	while current < stop:
 		yield current
 		current += step
+
+
+def test_simple():
+	m = MyEnumerate('abc')
+	assert list(m) == [(0, 'a'), (1, 'b'), (2, 'c')]
