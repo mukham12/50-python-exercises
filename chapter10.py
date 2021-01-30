@@ -281,3 +281,22 @@ def test_simple(tmp_path, small_file, big_file):
 	assert len(lines) == 9
 	assert lines[0] == 'This is the first line\n'
 	assert lines[-1] == 'but the biggest word will probably be encyclopedia'
+
+
+def test_simple():
+	for index, t in enumerate(elapsed_since('abc')):
+		assert isinstance(t, tuple)
+		assert isinstance(t[0], float)
+		assert isinstance(t[1], str)
+
+		if index == 0:
+			assert t[0] == 0
+
+		else:
+			assert int(t[0]) == 1
+
+		time.sleep(1)
+
+
+def test_empty():
+	assert list(mychain()) == []
