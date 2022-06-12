@@ -20,7 +20,6 @@ Define a class, Scoop, that represents a single scoop of ice cream. Each scoop s
 a string that you can initialize when you create the instance of Scoop.
 '''
 
-
 class Scoop:
 	def __init__(self, flavor):
 		self.flavor = flavor
