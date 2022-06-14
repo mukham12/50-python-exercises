@@ -52,6 +52,5 @@ its characters should be sorted in order, from smallest Unicode value to highest
 For example, the result of invoking strsort('cba') will be the string abc.
 '''
 
-
 def strsort(s):
 	return ''.join(sorted(s))
