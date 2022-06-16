@@ -1,7 +1,6 @@
 import operator
 from collections import Counter
 
-
 def firstlast(iterable):
 	"""
 	Exercise 3.1
