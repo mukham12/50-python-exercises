@@ -27,10 +27,6 @@ def restaurant():
 	print(f'Your total is {total}')
 
 
-print('Exercise 1\n')
-restaurant()
-print('*' * 50)
-
 
 def get_rainfall():
 	"""
