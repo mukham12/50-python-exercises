@@ -52,10 +52,6 @@ def get_rainfall():
 		print(f'{city}: {rain}')
 
 
-print('Exercise 2\n')
-get_rainfall()
-print('*' * 50)
-
 
 def dictdiff(a, b):
 	"""
